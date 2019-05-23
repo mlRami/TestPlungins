@@ -62,7 +62,7 @@ Draw.loadPlugin(function(ui)
 		{
 			if (evt.keyCode == 27)
 			{
-				deleteImage.click();
+				deleteImage.mouseout();
 			}
 		};
 		
@@ -124,14 +124,14 @@ Draw.loadPlugin(function(ui)
 					sourceGraph.scrollCellToVisible(selectionCell);
 				};
 				
-				mxEvent.addListener(deleteImage, 'click', closeHandler);
-				mxEvent.addListener(closeLabel, 'click', closeHandler);
+				mxEvent.addListener(deleteImage, 'mouseout', closeHandler);
+				mxEvent.addListener(closeLabel, 'mouseout', closeHandler);
 				
 				// Disables all built-in interactions
 				graph.setEnabled(false);
 
 				// Handles clicks on cells
-				graph.click = function(me)
+				graph.mouseout = function(me)
 				{
 					var evt = me.getEvent();
 					var cell = me.getCell();
@@ -355,7 +355,7 @@ Draw.loadPlugin(function(ui)
 	// Click handler for chromeless mode
 	if (ui.editor.isChromelessView())
 	{
-		ui.editor.graph.click = function(me)
+		ui.editor.graph.mouseout = function(me)
 		{
 			if (ui.editor.graph.model.isVertex(me.getCell()) &&
 				ui.editor.graph.model.getEdgeCount(me.getCell()) > 0 &&
