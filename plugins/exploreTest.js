@@ -29,7 +29,7 @@ Draw.loadPlugin(function(ui)
 	{
 		var sourceGraph = ui.editor.graph;
 		
-		/*var container = document.createElement('div');
+		var container = document.createElement('div');
 		container.style.position = 'absolute';
 		container.style.display = 'block';
 		container.style.background = '#ffffff';
@@ -37,7 +37,7 @@ Draw.loadPlugin(function(ui)
 		container.style.height = '100%';
 		container.style.left = '0px';
 		container.style.top = '0px';
-		container.style.zIndex = 2;*/
+		container.style.zIndex = 2;
 
 		var deleteImage = document.createElement('img');
 		deleteImage.setAttribute('src', IMAGE_PATH + '/delete.png');
@@ -56,7 +56,7 @@ Draw.loadPlugin(function(ui)
 		closeLabel.style.verticalAlign = 'top';
 		mxUtils.write(closeLabel, mxResources.get('close'));
 		container.appendChild(closeLabel);
-		//document.body.appendChild(container);
+		document.body.appendChild(container);
 		
 		var keyHandler = function(evt)
 		{
@@ -124,14 +124,14 @@ Draw.loadPlugin(function(ui)
 					sourceGraph.scrollCellToVisible(selectionCell);
 				};
 				
-			//	mxEvent.addListener(deleteImage, 'click', closeHandler);
-				//mxEvent.addListener(closeLabel, 'click', closeHandler);
+				mxEvent.addListener(deleteImage, 'click', closeHandler);
+				mxEvent.addListener(closeLabel, 'click', closeHandler);
 				
 				// Disables all built-in interactions
 				graph.setEnabled(false);
 
 				// Handles clicks on cells
-				graph.click = function(me)
+				graph.mouseup = function(me)
 				{
 					var evt = me.getEvent();
 					var cell = me.getCell();
