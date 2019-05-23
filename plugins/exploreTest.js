@@ -125,7 +125,7 @@ Draw.loadPlugin(function(ui)
 				};
 				
 			//	mxEvent.addListener(deleteImage, 'click', closeHandler);
-				mxEvent.addListener(closeLabel, 'click', closeHandler);
+				//mxEvent.addListener(closeLabel, 'click', closeHandler);
 				
 				// Disables all built-in interactions
 				graph.setEnabled(false);
