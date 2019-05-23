@@ -47,7 +47,7 @@ Draw.loadPlugin(function(ui)
 		deleteImage.style.top = '10px';
 		container.appendChild(deleteImage);*/
 		
-		var closeLabel = document.createElement('div');
+		/*var closeLabel = document.createElement('div');
 		closeLabel.style.position = 'absolute';
 		closeLabel.style.cursor = 'pointer';
 		closeLabel.style.right = '38px';
@@ -56,7 +56,7 @@ Draw.loadPlugin(function(ui)
 		closeLabel.style.verticalAlign = 'top';
 		mxUtils.write(closeLabel, mxResources.get('close'));
 		container.appendChild(closeLabel);
-		document.body.appendChild(container);
+		document.body.appendChild(container);*/
 		
 		var keyHandler = function(evt)
 		{
