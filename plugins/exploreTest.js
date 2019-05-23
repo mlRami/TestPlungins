@@ -29,7 +29,7 @@ Draw.loadPlugin(function(ui)
 	{
 		var sourceGraph = ui.editor.graph;
 		
-		var container = document.createElement('div');
+		/*var container = document.createElement('div');
 		container.style.position = 'absolute';
 		container.style.display = 'block';
 		container.style.background = '#ffffff';
@@ -37,17 +37,17 @@ Draw.loadPlugin(function(ui)
 		container.style.height = '100%';
 		container.style.left = '0px';
 		container.style.top = '0px';
-		container.style.zIndex = 2;
+		container.style.zIndex = 2;*/
 
-		/*var deleteImage = document.createElement('img');
+		var deleteImage = document.createElement('img');
 		deleteImage.setAttribute('src', IMAGE_PATH + '/delete.png');
 		deleteImage.style.position = 'absolute';
 		deleteImage.style.cursor = 'pointer';
 		deleteImage.style.right = '10px';
 		deleteImage.style.top = '10px';
-		container.appendChild(deleteImage);*/
+		container.appendChild(deleteImage);
 		
-		/*var closeLabel = document.createElement('div');
+		var closeLabel = document.createElement('div');
 		closeLabel.style.position = 'absolute';
 		closeLabel.style.cursor = 'pointer';
 		closeLabel.style.right = '38px';
@@ -56,7 +56,7 @@ Draw.loadPlugin(function(ui)
 		closeLabel.style.verticalAlign = 'top';
 		mxUtils.write(closeLabel, mxResources.get('close'));
 		container.appendChild(closeLabel);
-		document.body.appendChild(container);*/
+		//document.body.appendChild(container);
 		
 		var keyHandler = function(evt)
 		{
