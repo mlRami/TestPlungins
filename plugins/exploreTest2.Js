@@ -62,7 +62,7 @@ Draw.loadPlugin(function(ui)
 		{
 			if (evt.keyCode == 27)
 			{
-				deleteImage.mouseout();
+				deleteImage.click();
 			}
 		};
 		
@@ -124,8 +124,8 @@ Draw.loadPlugin(function(ui)
 					sourceGraph.scrollCellToVisible(selectionCell);
 				};
 				
-				mxEvent.addListener(deleteImage, 'mouseout', closeHandler);
-				mxEvent.addListener(closeLabel, 'mouseout', closeHandler);
+				mxEvent.addListener(deleteImage, 'click', closeHandler);
+				mxEvent.addListener(closeLabel, 'click', closeHandler);
 				
 				// Disables all built-in interactions
 				graph.setEnabled(false);
