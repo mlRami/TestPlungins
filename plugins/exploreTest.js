@@ -39,13 +39,13 @@ Draw.loadPlugin(function(ui)
 		container.style.top = '0px';
 		container.style.zIndex = 2;
 
-		var deleteImage = document.createElement('img');
+		/*var deleteImage = document.createElement('img');
 		deleteImage.setAttribute('src', IMAGE_PATH + '/delete.png');
 		deleteImage.style.position = 'absolute';
 		deleteImage.style.cursor = 'pointer';
 		deleteImage.style.right = '10px';
 		deleteImage.style.top = '10px';
-		container.appendChild(deleteImage);
+		container.appendChild(deleteImage);*/
 		
 		var closeLabel = document.createElement('div');
 		closeLabel.style.position = 'absolute';
