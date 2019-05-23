@@ -74,8 +74,8 @@ Draw.loadPlugin(function(ui)
 		// ID on the business object or else the cell ID should be
 		// globally unique for the lifetime of the graph model.
 		var requestId = 0;
-		currentState: null,
-            previousStyle: null,
+		var currentState = null;
+                var previousStyle = null;
             mouseDown: function(sender, me)
             {
                 if (this.currentState != null)
