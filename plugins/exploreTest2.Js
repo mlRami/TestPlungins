@@ -355,7 +355,7 @@ Draw.loadPlugin(function(ui)
 	// Click handler for chromeless mode
 	if (ui.editor.isChromelessView())
 	{
-		ui.editor.graph.mouseout = function(me)
+		ui.editor.graph.click = function(me)
 		{
 			if (ui.editor.graph.model.isVertex(me.getCell()) &&
 				ui.editor.graph.model.getEdgeCount(me.getCell()) > 0 &&
