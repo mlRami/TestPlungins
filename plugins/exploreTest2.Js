@@ -74,71 +74,7 @@ Draw.loadPlugin(function(ui)
 		// ID on the business object or else the cell ID should be
 		// globally unique for the lifetime of the graph model.
 		var requestId = 0;
-		var currentState = null;
-                var previousStyle = null;
-            mouseDown: function(sender, me)
-            {
-                if (this.currentState != null)
-                {
-                    this.dragLeave(me.getEvent(), this.currentState);
-                    this.currentState = null;
-                }
-            },
-            mouseMove: function(sender, me)
-            {
-                if (this.currentState != null && me.getState() == this.currentState)
-                {
-                    return;
-                }
-
-                var tmp = graph.view.getState(me.getCell());
-
-                // Ignores everything but vertices
-                if (graph.isMouseDown || (tmp != null && !
-                    graph.getModel().isVertex(tmp.cell)))
-                {
-                    tmp = null;
-                }
-
-                if (tmp != this.currentState)
-                {
-                    if (this.currentState != null)
-                    {
-                        this.dragLeave(me.getEvent(), this.currentState);
-                    }
-
-                    this.currentState = tmp;
-
-                    if (this.currentState != null)
-                    {
-                        this.dragEnter(me.getEvent(), this.currentState);
-                    }
-                }
-            },
-            mouseUp: function(sender, me) { },
-            dragEnter: function(evt, state)
-            {
-                if (state != null)
-                {
-                    this.previousStyle = state.style;
-                    state.style = mxUtils.clone(state.style);
-                    updateStyle(state, true);
-                    state.shape.apply(state);
-                    state.shape.reconfigure();
-                }
-            },
-            dragLeave: function(evt, state)
-            {
-                if (state != null)
-                {
-                    state.style = this.previousStyle;
-                    updateStyle(state, false);
-                    state.shape.apply(state);
-                    state.shape.reconfigure();
-                }
-            }
-        
-				   
+		
 		function main(container)
 		{
 			// Checks if browser is supported
