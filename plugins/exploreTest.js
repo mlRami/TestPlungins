@@ -131,7 +131,7 @@ Draw.loadPlugin(function(ui)
 				graph.setEnabled(false);
 
 				// Handles clicks on cells
-				graph.mouseup = function(me)
+				graph.mouseout = function(me)
 				{
 					var evt = me.getEvent();
 					var cell = me.getCell();
