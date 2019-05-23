@@ -109,6 +109,10 @@ Draw.loadPlugin(function(ui)
 					
 					return null;
 				};
+				mouseMove: function(sender, evt)
+ 				 {
+  				  mxLog.debug('mouseMove');
+ 					 }
 				
 				graph.getFoldingImage = function()
 				{
@@ -125,13 +129,13 @@ Draw.loadPlugin(function(ui)
 				};
 				
 				mxEvent.addListener(deleteImage, 'click', closeHandler);
-				mxEvent.addListener(closeLabel, 'mouseUp', closeHandler);
+				mxEvent.addListener(closeLabel, 'mouseMove', closeHandler);
 				
 				// Disables all built-in interactions
 				graph.setEnabled(false);
 
 				// Handles clicks on cells
-				graph.mouseUp = function(me)
+				graph.mouseMove = function(me)
 				{
 					var evt = me.getEvent();
 					var cell = me.getCell();
@@ -355,7 +359,7 @@ Draw.loadPlugin(function(ui)
 	// Click handler for chromeless mode
 	if (ui.editor.isChromelessView())
 	{
-		ui.editor.graph.mouseUp = function(me)
+		ui.editor.graph.mouseMove= function(me)
 		{
 			if (ui.editor.graph.model.isVertex(me.getCell()) &&
 				ui.editor.graph.model.getEdgeCount(me.getCell()) > 0 &&
