@@ -75,6 +75,7 @@ Draw.loadPlugin(function(ui)
 		// globally unique for the lifetime of the graph model.
 		var requestId = 0;
 		
+		
 		function main(container)
 		{
 			// Checks if browser is supported
@@ -123,6 +124,16 @@ Draw.loadPlugin(function(ui)
 					// FIXME: Does not work
 					sourceGraph.scrollCellToVisible(selectionCell);
 				};
+				
+			var mxPopupMenuShowMenu = mxPopupMenu.prototype.showMenu;
+			mxPopupMenu.prototype.showMenu = function()
+		        {
+ 			mxPopupMenuShowMenu.apply(this, arguments);
+  			this.div.style.overflowY = 'auto';
+ 			this.div.style.overflowX = 'hidden';
+ 			this.div.style.maxHeight = '160px';
+			};
+				
 				
 				mxEvent.addListener(deleteImage, 'mouseover', closeHandler);
 				mxEvent.addListener(closeLabel, 'mouseover', closeHandler);
@@ -230,7 +241,6 @@ Draw.loadPlugin(function(ui)
 					// previously, then this needs to be changed to analyze
 					// the target model before calling mergeChildren above
 					var vertices = [];
-					
 					for (var key in graph.getModel().cells)
 					{
 						var tmp = graph.getModel().getCell(key);
