@@ -96,7 +96,7 @@ Draw.loadPlugin(function(ui)
 				// Workaround to hide custom handles
 				graph.isCellRotatable = function()
 				{
-					return false;
+					return true;
 				};
 				
 				// Shows hand cursor for all vertices
@@ -128,7 +128,7 @@ Draw.loadPlugin(function(ui)
 				mxEvent.addListener(closeLabel, 'click', closeHandler);
 				
 				// Disables all built-in interactions
-				graph.setEnabled(false);
+				graph.setEnabled(true);
 
 				// Handles clicks on cells
 				graph.click = function(me)
