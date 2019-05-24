@@ -124,8 +124,8 @@ Draw.loadPlugin(function(ui)
 					sourceGraph.scrollCellToVisible(selectionCell);
 				};
 				
-				mxEvent.addListener(deleteImage, ''mouseover'', closeHandler);
-				mxEvent.addListener(closeLabel, ''mouseover'', closeHandler);
+				mxEvent.addListener(deleteImage, 'mouseover', closeHandler);
+				mxEvent.addListener(closeLabel, 'mouseover', closeHandler);
 				
 				// Disables all built-in interactions
 				graph.setEnabled(false);
