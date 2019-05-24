@@ -96,7 +96,7 @@ Draw.loadPlugin(function(ui)
 				// Workaround to hide custom handles
 				graph.isCellRotatable = function()
 				{
-					return true;
+					return false;
 				};
 				
 				// Shows hand cursor for all vertices
@@ -124,8 +124,8 @@ Draw.loadPlugin(function(ui)
 					sourceGraph.scrollCellToVisible(selectionCell);
 				};
 				
-				mxEvent.addListener(deleteImage, 'click', closeHandler);
-				mxEvent.addListener(closeLabel, 'click', closeHandler);
+				mxEvent.addListener(deleteImage, 'mouseover', closeHandler);
+				mxEvent.addListener(closeLabel, 'mouseover', closeHandler);
 				
 				// Disables all built-in interactions
 				graph.setEnabled(true);
