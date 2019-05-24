@@ -110,6 +110,19 @@ Draw.loadPlugin(function(ui)
 					
 					return null;
 				};
+			var mxPopupMenuShowMenu = mxPopupMenu.prototype.showMenu;
+			mxPopupMenu.prototype.showMenu = function()
+		        {
+				return true;
+				
+ 			mxPopupMenuShowMenu.apply(this, arguments);
+  			this.div.style.overflowY = 'auto';
+ 			this.div.style.overflowX = 'hidden';
+ 			this.div.style.maxHeight = '160px';
+			};
+				
+				
+				
 				
 				graph.getFoldingImage = function()
 				{
@@ -125,14 +138,7 @@ Draw.loadPlugin(function(ui)
 					sourceGraph.scrollCellToVisible(selectionCell);
 				};
 				
-			var mxPopupMenuShowMenu = mxPopupMenu.prototype.showMenu;
-			mxPopupMenu.prototype.showMenu = function()
-		        {
- 			mxPopupMenuShowMenu.apply(this, arguments);
-  			this.div.style.overflowY = 'auto';
- 			this.div.style.overflowX = 'hidden';
- 			this.div.style.maxHeight = '160px';
-			};
+			
 				
 				
 				mxEvent.addListener(deleteImage, 'mouseover', closeHandler);
