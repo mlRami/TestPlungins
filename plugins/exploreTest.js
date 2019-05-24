@@ -124,11 +124,11 @@ Draw.loadPlugin(function(ui)
 					sourceGraph.scrollCellToVisible(selectionCell);
 				};
 				
-				mxEvent.addListener(deleteImage, 'mouseover', closeHandler);
-				mxEvent.addListener(closeLabel, 'mouseover', closeHandler);
+				mxEvent.addListener(deleteImage, ''mouseover'', closeHandler);
+				mxEvent.addListener(closeLabel, ''mouseover'', closeHandler);
 				
 				// Disables all built-in interactions
-				graph.setEnabled(true);
+				graph.setEnabled(false);
 
 				// Handles clicks on cells
 				graph.click = function(me)
@@ -355,7 +355,7 @@ Draw.loadPlugin(function(ui)
 	// Click handler for chromeless mode
 	if (ui.editor.isChromelessView())
 	{
-		ui.editor.graph.Click = function(me)
+		ui.editor.graph.click = function(me)
 		{
 			if (ui.editor.graph.model.isVertex(me.getCell()) &&
 				ui.editor.graph.model.getEdgeCount(me.getCell()) > 0 &&
